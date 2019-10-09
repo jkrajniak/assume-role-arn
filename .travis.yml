@@ -1,12 +1,18 @@
 language: go
 go:
 - 1.10.x
+env:
+- GO11MODULE=on
+os:
+- linux
+- osx
 git:
   depth: 1
 notifications:
   email: false
+install: true
 script:
-- go test -v ./...
+- go test -i -v ./...
 - mkdir bin
 - GO111MODULE=on GOOS=linux go build -o bin/assume-role-arn-linux cmd/assume-role-arn/main.go
 - GO111MODULE=on GOOS=darwin go build -o bin/assume-role-arn-osx cmd/assume-role-arn/main.go
