@@ -27,3 +27,4 @@ deploy:
   on:
     repo: nordcloud/assume-role-arn
     tags: true
+
