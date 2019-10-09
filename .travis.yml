@@ -8,6 +8,8 @@ git:
 notifications:
   email: false
 install: true
+before_script:
+- go mod verify
 script:
 - mkdir bin
 - GOOS=linux go build -o bin/assume-role-arn-linux cmd/assume-role-arn/main.go
